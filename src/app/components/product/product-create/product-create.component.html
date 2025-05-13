@@ -4,11 +4,45 @@
         <mat-form-field>
             <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
         </mat-form-field>
+
         <mat-form-field>
             <input matInput placeholder="Preço de custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
         </mat-form-field>
+
         <mat-form-field>
             <input matInput placeholder="Preço de venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Quantidade" [(ngModel)]="product.proQtdEstoque" name="proQtdEstoque">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Código de barras" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Unidade de medida" [(ngModel)]="product.proUnidadeMedida" name="proUnidadeMedida">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Status" [(ngModel)]="product.proStatus" name="proStatus">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data de cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data de Atualização" [(ngModel)]="product.proDataAtt" name="proDataAtt">
         </mat-form-field>
     </form>
 

@@ -11,8 +11,12 @@ import { Router } from '@angular/router';
 export class FormaPagamentoCreateComponent implements OnInit {
 
  formaPagamento: FormaPagamento = {
-     fpgDescricao: ''
-   }
+   fpgDescricao: '',
+   fpgAtivo: '',
+   fpgPermiteParcelamento: '',
+   fpgNrMaxParcela: 0,
+   fpgTaxaAdicional: 0
+ }
  
    //importando formaPagamentoService
    constructor(private formaPagamentoService: FormaPagamentoService,
