@@ -1,7 +1,7 @@
-.sidenav{
-    background-color: #3F51B5;
+/*.sidenav{
+    background-color: #f9a03f;
     width: 200px;
-}
+}*/
 .sidenav a{
     color: #fff;
 }
@@ -11,5 +11,46 @@
 
 .content{
     padding: 16px;
-    background-color: #fff;
+    background-color: #283618;
 }
+
+.sidebar-wrapper {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #fe9920;
+    color: white;
+    position: fixed;
+    left: -180px; /* esconde quase tudo, mas deixa 20px visíveis */
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar:hover {
+    left: 0; /* aparece ao passar o mouse */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 20px;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .content {
+    margin-left: 20px; /* margem para o espaço ocupado pelos 20px visíveis */
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  
