@@ -2,9 +2,7 @@
     background-color: #f9a03f;
     width: 200px;
 }*/
-.sidenav a{
-    color: #fff;
-}
+
 .sidenav i{
     padding-right: 10px;
 }
@@ -52,5 +50,35 @@
     padding: 20px;
     flex-grow: 1;
   }
-  
-  
+ 
+.sidenav a:hover {
+    background-color: #202020; /* Cor mais escura ao passar o mouse */
+}
+
+.sidenav a{
+    display: flex; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço do ícone e do texto */
+    margin: 10px 0; 
+    padding: 10px; 
+    width: 90%; /* quando passa o mouse em cima, aparece uma barra mais escura */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 4px; /* arredonda os cantos */
+    transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
+}
+
+.sidenav{
+    background-color: #000000a2;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    height: 100vh;
+  }
+
+
