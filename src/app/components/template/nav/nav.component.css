@@ -9,7 +9,10 @@
 
 .content{
     padding: 16px;
-    background-color: #283618;
+    background-color: #1d1d1d;
+    margin-left: 20px; /* margem para o espaço ocupado pelos 20px visíveis */
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .sidebar-wrapper {
@@ -45,11 +48,6 @@
     text-decoration: none;
   }
   
-  .content {
-    margin-left: 20px; /* margem para o espaço ocupado pelos 20px visíveis */
-    padding: 20px;
-    flex-grow: 1;
-  }
  
 .sidenav a:hover {
     background-color: #202020; /* Cor mais escura ao passar o mouse */
@@ -69,8 +67,7 @@
 }
 
 .sidenav{
-    background-color: #000000a2;
-    width: 200px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
