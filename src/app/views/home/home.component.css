@@ -2,8 +2,12 @@
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
+    color: white;
 }
-
+.home {
+    background-color: #292827;
+}
 .home .subtitle{
     font-size: 1.1rem;
+    color: white;
 }
