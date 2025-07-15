@@ -13,6 +13,9 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-crud.component';
+import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
+import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 
 //configuração para rotear entre as paginas na home
 const routes: Routes = [
@@ -29,11 +32,11 @@ const routes: Routes = [
     component: ProductCreateComponent
   },
   {
-    path: "products/update/:proId",
+    path: "products/update/:prodId",
     component: ProductUpdateComponent
   },
   {
-    path: "products/delete/:proId",
+    path: "products/delete/:prodId",
     component: ProductDeleteComponent
   },
   {
@@ -67,6 +70,18 @@ const routes: Routes = [
   {
     path: "clientes/delete/:cliId",
     component: ClienteDeleteComponent
+  },
+  {
+    path: "funcionario",
+    component: FuncionarioCrudComponent
+  },
+  {
+    path: "funcionario/create",
+    component: FuncionarioCreateComponent
+  },
+  {
+    path: "funcionario/update/:funId",
+    component: FuncionarioUpdateComponent
   }
 ];
 

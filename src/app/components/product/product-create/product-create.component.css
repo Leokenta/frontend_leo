@@ -7,3 +7,9 @@ button{
     margin: 20px 15px 0px 0px;
 }
 
+section {
+    display: flex;
+    align-items: center;
+  }
+  
+

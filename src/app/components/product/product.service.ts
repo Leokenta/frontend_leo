@@ -31,18 +31,18 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl)
   }
 
-  readById(proId: string): Observable<Product>{
-    const url = `${this.baseUrl}/${proId}`
+  readById(prodId: string): Observable<Product>{
+    const url = `${this.baseUrl}/${prodId}`
     return this.http.get<Product>(url)
   }
  
   update(product: Product): Observable<Product>{
-    const url = `${this.baseUrl}/${product.proId}`
+    const url = `${this.baseUrl}/${product.prodId}`
     return this.http.put<Product>(url, product)
   }
   
-  delete(proId: number): Observable<Product>{    
-    const url = `${this.baseUrl}/${proId}`
+  delete(prodId: number): Observable<Product>{    
+    const url = `${this.baseUrl}/${prodId}`
     return this.http.delete<Product>(url)
   }
 

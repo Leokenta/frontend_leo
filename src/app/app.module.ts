@@ -47,6 +47,12 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
 import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+//import { FuncionarioComponent } from './funcionario/funcionario.component';
+import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-crud.component';
+import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
+import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
+import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component';
+import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 
 registerLocaleData(localePt)
 
@@ -73,7 +79,13 @@ registerLocaleData(localePt)
     ClienteCrudComponent,
     ClienteReadComponent,
     ClienteUpdateComponent,
-    ClienteDeleteComponent
+    ClienteDeleteComponent,
+    //FuncionarioComponent,
+    FuncionarioCrudComponent,
+    FuncionarioCreateComponent,
+    FuncionarioDeleteComponent,
+    FuncionarioReadComponent,
+    FuncionarioUpdateComponent
   ],
   imports: [
     BrowserModule,

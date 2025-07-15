@@ -3,25 +3,22 @@ import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { Product } from '../product.model';
 
+
+
 @Component({
-  selector: 'app-product-create',
+  selector: 'app-product-create', 
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
 
   product: Product = {
-    proNome: '',
-    proPrecoCusto: 0,
-    proPrecoVenda: 0,
-    proQtdEstoque: 0,
-    proCategoria: '',
-    proCodigoBarras: '',
-    proMarca: '',
-    proUnidadeMedida: '',
-    proStatus: '',
-    proDataCadastro: '',
-    proDataAtt: ''
+    prodNome: '',
+    prodPrecoCusto: 0,
+    prodPrecoVenda: 0,
+    prodQtdEstoque: 0,
+    prodCategoria: '',
+    prodMarca: '',
   }
 
   //importando productService
