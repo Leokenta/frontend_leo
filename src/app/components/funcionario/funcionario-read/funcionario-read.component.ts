@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Funcionario } from '../funcionario.model';
+import { FuncionarioService } from '../funcionario.service';
 
 @Component({
   selector: 'app-funcionario-read',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionarioReadComponent implements OnInit {
 
-  constructor() { }
+  funcionarios!: Funcionario[]
+  displayedColumns = ['funId', 'funNome', 'funCPF', 'funCargo','funTelefone', 'action']
+
+  constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
+    this.funcionarioService.read().subscribe(funcionarios => {
+      this.funcionarios = funcionarios
+      console.log(funcionarios)  
+    })
   }
 
 }

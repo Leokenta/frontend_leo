@@ -4,4 +4,8 @@ export interface Cliente {
     cliCpf: string
     cliEmail: string
     cliTelefone: string
+    cliEndRua: string
+    cliEndCidade: string
+    cliEndNum: string
+    cliEndEstado: string
 }

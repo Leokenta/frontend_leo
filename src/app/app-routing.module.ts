@@ -5,10 +5,6 @@ import {ProductCrudComponent} from  './views/product-crud/product-crud.component
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
-import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
-import { FormaPagamentoCreateComponent } from './components/formaPagamento/forma-pagamento-create/forma-pagamento-create.component';
-import { FormaPagamentoUpdateComponent } from './components/formaPagamento/forma-pagamento-update/forma-pagamento-update.component';
-import { FormaPagamentoDeleteComponent } from './components/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
@@ -40,22 +36,6 @@ const routes: Routes = [
     component: ProductDeleteComponent
   },
   {
-    path: "fpagamentos",
-    component: FormaPagamentoCrudComponent
-  },
-  {
-    path: "fpagamentos/create",
-    component: FormaPagamentoCreateComponent
-  },
-  {
-    path: "fpagamentos/update/:fpgId",
-    component: FormaPagamentoUpdateComponent
-  },
-  {
-    path: "fpagamentos/delete/:fpgId",
-    component: FormaPagamentoDeleteComponent
-  },
-  {
     path: "clientes",
     component: ClienteCrudComponent
   },
@@ -72,15 +52,15 @@ const routes: Routes = [
     component: ClienteDeleteComponent
   },
   {
-    path: "funcionario",
+    path: "funcionarios",
     component: FuncionarioCrudComponent
   },
   {
-    path: "funcionario/create",
+    path: "funcionarios/create",
     component: FuncionarioCreateComponent
   },
   {
-    path: "funcionario/update/:funId",
+    path: "funcionarios/update/:funId",
     component: FuncionarioUpdateComponent
   }
 ];

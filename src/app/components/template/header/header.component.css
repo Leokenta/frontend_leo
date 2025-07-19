@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     background-color: #f8dda4;
+    position: fixed;
+    z-index: 1000;
 }
 
 .header a {

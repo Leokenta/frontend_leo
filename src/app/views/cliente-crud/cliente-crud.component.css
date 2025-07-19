@@ -18,6 +18,7 @@ button {
     position: relative; /* Torna a posição do botão relativa para posicionar os pseudo elementos dentro dele */
     overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do botão */
     z-index: 1; /* Define o nível de empilhamento do botão (fica acima dos pseudo-elementos) */
+    margin-top: 70px;
   }
   
   button::after {

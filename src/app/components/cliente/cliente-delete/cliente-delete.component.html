@@ -1,21 +1,38 @@
-<mat-card>
+<div class="card-container"> 
+<mat-card class="fundo-personalizado">
     <mat-card-title>Excluir Cliente</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" [value]="cliente.cliNome" name="cliNome" disabled>
+            <input matInput placeholder="Nome" [(ngModel)]="cliente.cliNome" name="cliNome" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Cpf" [value]="cliente.cliCpf" name="cliCpf" disabled>
+            <input matInput placeholder="CPF" [(ngModel)]="cliente.cliCpf" name="cliCpf" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="E-mail" [value]="cliente.cliEmail" name="cliEmail" disabled>
+            <input matInput placeholder="Email"   [(ngModel)]="cliente.cliEmail"  name="cliEmail" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Telefone" [value]="cliente.cliTelefone" name="cliTelefone" disabled>
+            <input matInput placeholder="Telefone" [(ngModel)]="cliente.cliTelefone" name="cliTelefone" disabled>
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)="deleteCliente()" color="warn">
+     <mat-card-title>Endereço</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Rua" [(ngModel)]="cliente.cliEndRua" name="cliEndRua" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="cliente.cliEndCidade" name="cliEndCidade" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número" [(ngModel)]="cliente.cliEndNum" name="cliEndNum" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estado" [(ngModel)]="cliente.cliEndEstado" name="cliEndEstado" disabled>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button class="btn-laranja" (click)="deleteCliente()" color="primary">
         Excluir
     </button>
     
@@ -24,3 +41,4 @@
     </button>
 
 </mat-card>
+</div>
