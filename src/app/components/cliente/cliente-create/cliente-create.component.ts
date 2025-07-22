@@ -91,13 +91,13 @@ onTelefoneInput(event: any): void {
     return;
   }
 
-  if (this.cliente.cliCpf.length > 14) {
+  if (this.cliente.cliCpf.length < 14) {
     this.clienteService.showMessage('O CPF inserido não é válido. Por favor, revise os dados.');
     return;
   }
 
-  if (this.cliente.cliTelefone.length > 15) {
-    this.clienteService.showMessage('Número de telefone inválido: limite máximo de 15 caracteres.');
+  if (this.cliente.cliTelefone.length < 15) {
+    this.clienteService.showMessage('Número de telefone inválido.');
     return;
   }
 

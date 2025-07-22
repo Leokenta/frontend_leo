@@ -1,1 +1,28 @@
-<p>funcionario-delete works!</p>
+<div class="card-container"> 
+<mat-card class="fundo-personalizado">
+    <mat-card-title>Excluir Funcionario</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="funcionario.funNome" name="funNome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="funcionario.funCPF" name="funCPF" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cargo"   [(ngModel)]="funcionario.funCargo"  name="funCargo" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="funcionario.funTelefone" name="funTelefone" disabled>
+        </mat-form-field>
+    </form>
+
+     <button mat-raised-button class="btn-laranja" (click)="deleteFuncionario()" color="primary">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>
+</div>

@@ -12,6 +12,7 @@ import { ClienteDeleteComponent } from './components/cliente/cliente-delete/clie
 import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-crud.component';
 import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
+import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
 
 //configuração para rotear entre as paginas na home
 const routes: Routes = [
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: "funcionarios/update/:funId",
     component: FuncionarioUpdateComponent
+  },
+  {
+    path: "funcionarios/delete/:funId",
+    component: FuncionarioDeleteComponent
   }
 ];
 

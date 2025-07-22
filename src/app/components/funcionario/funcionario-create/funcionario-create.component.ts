@@ -87,13 +87,13 @@ onTelefoneInput(event: any): void {
     return;
   }
 
-  if (this.funcionario.funCPF.length > 14) {
+  if (this.funcionario.funCPF.length < 14) {
     this.funcionarioService.showMessage('O CPF inserido não é válido. Por favor, revise os dados.');
     return;
   }
 
-  if (this.funcionario.funTelefone.length > 15) {
-    this.funcionarioService.showMessage('Número de telefone inválido: limite máximo de 15 caracteres.');
+  if (this.funcionario.funTelefone.length < 15) {
+    this.funcionarioService.showMessage('Número de telefone inválido.');
     return;
   }
 

@@ -9,16 +9,28 @@ import { ClienteService } from '../cliente.service';
 })
 export class ClienteReadComponent implements OnInit {
 
-  clientes!: Cliente[]
-  displayedColumns = ['cliId', 'cliNome', 'cliCpf', 'cliEmail','cliTelefone', 'action']
+  filtro: string = '';
+  clientes: Cliente[] = [];
+  clientesFiltrados: Cliente[] = [];
+  displayedColumns = ['cliId', 'cliNome', 'cliCpf', 'cliEmail', 'cliTelefone', 'action'];
 
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
     this.clienteService.read().subscribe(clientes => {
-      this.clientes = clientes
-      console.log(clientes)  
-    })
+      this.clientes = clientes;
+      this.clientesFiltrados = clientes;
+    });
+  }
+
+  aplicarFiltro(): void {
+    const filtroLower = this.filtro.toLowerCase();
+    this.clientesFiltrados = this.clientes.filter(cliente =>
+      cliente.cliNome.toLowerCase().includes(filtroLower) ||
+      cliente.cliCpf.toLowerCase().includes(filtroLower) ||
+      cliente.cliEmail.toLowerCase().includes(filtroLower) ||
+      cliente.cliTelefone.toLowerCase().includes(filtroLower)
+    );
   }
 
 }

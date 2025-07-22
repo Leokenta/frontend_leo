@@ -48,6 +48,8 @@ import { FuncionarioCreateComponent } from './components/funcionario/funcionario
 import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
 import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 registerLocaleData(localePt)
 
@@ -94,7 +96,8 @@ registerLocaleData(localePt)
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,

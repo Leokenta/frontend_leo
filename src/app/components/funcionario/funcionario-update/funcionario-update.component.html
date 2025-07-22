@@ -1,1 +1,28 @@
-<p>funcionario-update works!</p>
+<div class="card-container"> 
+<mat-card class="fundo-personalizado">
+    <mat-card-title>Atualizar Funcionario</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="funcionario.funNome" name="funNome" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [value]="cpfFormatado" [(ngModel)]="funcionario.funCPF" name="funCPF" (input)="onCpfInput($event)" required maxlength="14">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cargo"   [(ngModel)]="funcionario.funCargo"  name="funCargo" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="telefoneFormatado" [(ngModel)]="funcionario.funTelefone" (input)="onTelefoneInput($event)" name="funTelefone" required maxlength="15">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button class="btn-laranja" (click)="updateFuncionario()" color="primary">
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>
+</div>

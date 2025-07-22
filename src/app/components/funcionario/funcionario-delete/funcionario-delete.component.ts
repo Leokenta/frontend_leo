@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Funcionario } from '../funcionario.model';
+import { FuncionarioService } from '../funcionario.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-funcionario-delete',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionarioDeleteComponent implements OnInit {
 
-  constructor() { }
+  funcionario!: Funcionario;
+
+  constructor(
+    private funcionarioService: FuncionarioService, 
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const funId = this.route.snapshot.paramMap.get('funId');
+    this.funcionarioService.readById(funId!).subscribe(funcionario =>{
+      this.funcionario = funcionario
+    })
+  }
+
+  deleteFuncionario(): void {
+    this.funcionarioService.delete(this.funcionario.funId!).subscribe(() =>{
+    this.funcionarioService.showMessage('Funcionario excluido com sucesso!')  
+    this.router.navigate(['/funcionarios'])
+    })
+  }
+
+  cancel(): void{
+    this.router.navigate(['/funcionarios'])
   }
 
 }
