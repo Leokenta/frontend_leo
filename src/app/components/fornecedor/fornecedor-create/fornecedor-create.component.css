@@ -1,0 +1,36 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px
+   }
+   
+   mat-card{
+     width: 100%;
+     max-width: 1300px;
+     height: 300px;
+     padding: 24px;
+   }
+   
+   .fundo-personalizado {
+       background-color: #ffffffcb 
+   
+   }
+   
+   form{
+       display: flex;
+       flex-direction: column;
+   }
+   
+   button{
+       margin: 20px 15px 0px 0px;
+   
+   }
+   
+   .btn-laranja {
+     background-color: orange;
+     color: white; /* para garantir que o texto fique legível */
+   }
+   
+   .btn-laranja:hover {
+     background-color: darkorange; /* opcional: cor no hover */
+   }

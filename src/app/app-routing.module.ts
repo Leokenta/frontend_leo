@@ -13,6 +13,12 @@ import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-c
 import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
+import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
+import { FornecedorUpdateComponent } from './components/fornecedor/fornecedor-update/fornecedor-update.component';
+import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
+import { FornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
+import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
+
 
 //configuração para rotear entre as paginas na home
 const routes: Routes = [
@@ -67,7 +73,23 @@ const routes: Routes = [
   {
     path: "funcionarios/delete/:funId",
     component: FuncionarioDeleteComponent
-  }
+  },
+  {
+    path: "fornecedores",
+    component: FornecedorCrudComponent
+  },
+  {
+    path: "fornecedores/create",
+    component: FornecedorCreateComponent
+  },
+  {
+    path: "fornecedores/update/:forId",
+    component: FornecedorUpdateComponent
+  },
+  {
+    path: "fornecedores/delete/:forId",
+    component: FornecedorDeleteComponent
+  },
 ];
 
 @NgModule({

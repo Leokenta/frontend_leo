@@ -27,7 +27,7 @@ button{
 }
 
 .btn-laranja {
-  background-color: orange;
+  background-color: rgb(255, 0, 0);
   color: white; /* para garantir que o texto fique legível */
 }
 

@@ -49,6 +49,11 @@ import { FuncionarioDeleteComponent } from './components/funcionario/funcionario
 import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
+import { FornecedorUpdateComponent } from './components/fornecedor/fornecedor-update/fornecedor-update.component';
+import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
+import { FornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
+import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 
 
 registerLocaleData(localePt)
@@ -77,7 +82,12 @@ registerLocaleData(localePt)
     FuncionarioCreateComponent,
     FuncionarioDeleteComponent,
     FuncionarioReadComponent,
-    FuncionarioUpdateComponent
+    FuncionarioUpdateComponent,
+    FornecedorCreateComponent,
+    FornecedorUpdateComponent,
+    FornecedorReadComponent,
+    FornecedorDeleteComponent,
+    FornecedorCrudComponent
   ],
   imports: [
     BrowserModule,
