@@ -12,7 +12,7 @@ export class FornecedorReadComponent implements OnInit {
   filtro: string = '';
   fornecedores: Fornecedor[] = [];
   fornecedoresFiltrados: Fornecedor[] = [];
-  displayedColumns = ['forId', 'forNomeFantasia', 'forCnpj', 'forRazaoSocial', 'action'];
+  displayedColumns = ['forId', 'forNomeFantasia', 'forCnpj', 'forRazaoSocial','forTelefone', 'action'];
 
   constructor(private fornecedorService: FornecedorService) { }
 
@@ -28,7 +28,8 @@ export class FornecedorReadComponent implements OnInit {
     this.fornecedoresFiltrados = this.fornecedores.filter(fornecedor =>
       fornecedor.forNomeFantasia.toLowerCase().includes(filtroLower) ||
       fornecedor.forCnpj.toLowerCase().includes(filtroLower) ||
-      fornecedor.forRazaoSocial.toLowerCase().includes(filtroLower)
+      fornecedor.forRazaoSocial.toLowerCase().includes(filtroLower) ||
+      fornecedor.forTelefone.toLowerCase().includes(filtroLower)
     );
   }
 

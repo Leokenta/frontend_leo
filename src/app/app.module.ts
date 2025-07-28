@@ -25,17 +25,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { ProductCrudComponent } from './views/product-crud/product-crud.component';
+import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
 import { RedDirective } from './directives/red.directive';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 
-//importações
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
+
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 //import { ClienteComponent } from './components/cliente/cliente.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
@@ -54,6 +50,10 @@ import { FornecedorUpdateComponent } from './components/fornecedor/fornecedor-up
 import { FornecedorReadComponent } from './components/fornecedor/fornecedor-read/fornecedor-read.component';
 import { FornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
+import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
+import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
+import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
+import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
 
 
 registerLocaleData(localePt)
@@ -65,12 +65,8 @@ registerLocaleData(localePt)
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductCrudComponent,
+    ProdutoCrudComponent,
     RedDirective,
-    ProductCreateComponent,
-    ProductReadComponent,
-    ProductUpdateComponent,
-    ProductDeleteComponent,
     ClienteCreateComponent,
     //ClienteComponent,
     ClienteCrudComponent,
@@ -87,7 +83,11 @@ registerLocaleData(localePt)
     FornecedorUpdateComponent,
     FornecedorReadComponent,
     FornecedorDeleteComponent,
-    FornecedorCrudComponent
+    FornecedorCrudComponent,
+    ProdutoCreateComponent,
+    ProdutoReadComponent,
+    ProdutoUpdateComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,

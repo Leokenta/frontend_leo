@@ -21,14 +21,20 @@
         <td mat-cell *matCellDef="let row">{{row.forNomeFantasia}}</td>
       </ng-container>
   
-      <!-- Price Column -->
+      <!-- CNPJ Column -->
       <ng-container matColumnDef="forCnpj">
         <th mat-header-cell *matHeaderCellDef>CNPJ</th>
                                             <!--UTILIZAÇÃO DE PIPES-->
         <td mat-cell *matCellDef="let row">{{row.forCnpj}}</td>
       </ng-container>
 
-      <!-- Price Column -->
+       <!-- Telefone Column -->
+    <ng-container matColumnDef="forTelefone">
+      <th mat-header-cell *matHeaderCellDef>Telefone</th>
+      <td mat-cell *matCellDef="let row">{{row.forTelefone}}</td>
+    </ng-container>
+
+      <!-- RazaoSocial Column -->
       <ng-container matColumnDef="forRazaoSocial">
         <th mat-header-cell *matHeaderCellDef>Razao Social</th>
                                             <!--UTILIZAÇÃO DE PIPES-->

@@ -14,6 +14,7 @@ export class FornecedorCreateComponent implements OnInit {
     forNomeFantasia: '',
     forCnpj:'',
     forRazaoSocial:'',
+    forTelefone: ''
   }
 
   //importando fornecedorService
@@ -52,9 +53,37 @@ export class FornecedorCreateComponent implements OnInit {
   
     event.target.value = value;
   }
+
+  //Responsavel por formatar um padrao de caracteres para o telefone
+telefoneFormatado: string = '';
+onTelefoneInput(event: any): void {
+  let valor = event.target.value;
+
+  // Remove tudo que não for número
+  valor = valor.replace(/\D/g, '');
+
+  // Limita a 11 dígitos
+  if (valor.length > 11) {
+    valor = valor.substring(0, 11);
+  }
+
+  // Formata com parênteses, espaço e hífen
+  if (valor.length > 6) {
+    // celular com 9 dígitos
+    valor = valor.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+  } else if (valor.length > 2) {
+    // fixo ou celular com menos dígitos ainda
+    valor = valor.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+  } else {
+    // apenas DDD
+    valor = valor.replace(/^(\d{0,2})/, '($1');
+  }
+
+  this.telefoneFormatado = valor;
+}
  
    createFornecedor(): void {
-    if (!this.fornecedor.forNomeFantasia || !this.fornecedor.forCnpj || !this.fornecedor.forRazaoSocial) {
+    if (!this.fornecedor.forNomeFantasia || !this.fornecedor.forCnpj || !this.fornecedor.forRazaoSocial || !this.fornecedor.forTelefone) {
     alert('🚨 Preencha todos os campos obrigatórios!(*)');
     return;
   }
@@ -71,6 +100,16 @@ export class FornecedorCreateComponent implements OnInit {
 
   if (this.fornecedor.forRazaoSocial.length > 100) {
     this.fornecedorService.showMessage('Razão social deve ter no máximo 100 caracteres');
+    return;
+  }
+
+  if (this.fornecedor.forTelefone.length < 15) {
+    this.fornecedorService.showMessage('Número de telefone inválido.');
+    return;
+  }
+
+  if (this.fornecedor.forCnpj.length < 18) {
+    this.fornecedorService.showMessage('O CNPJ inserido não é válido. Por favor, revise os dados.');
     return;
   }
 

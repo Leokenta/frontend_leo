@@ -64,6 +64,7 @@
     text-decoration: none; /* Remove sublinhado */
     border-radius: 4px; /* arredonda os cantos */
     transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
+    font-size: 20px;
 }
 
 .sidenav{
@@ -75,5 +76,5 @@
 }
 
 .container {
-    height: 100vh;
+    height: 95vh;
   }

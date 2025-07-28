@@ -11,6 +11,9 @@
             <mat-form-field>
                 <input matInput placeholder="Razão social"   [(ngModel)]="fornecedor.forRazaoSocial"  name="forRazaoSocial" required>
             </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefone" [value]="telefoneFormatado" [(ngModel)]="fornecedor.forTelefone" (input)="onTelefoneInput($event)" name="forTelefone" required maxlength="15">
+            </mat-form-field>
 
         </form>
     

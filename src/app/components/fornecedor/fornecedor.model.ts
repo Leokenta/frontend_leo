@@ -3,4 +3,5 @@ export interface Fornecedor{
     forNomeFantasia: string
     forCnpj: string
     forRazaoSocial: string
+    forTelefone : string
 }
