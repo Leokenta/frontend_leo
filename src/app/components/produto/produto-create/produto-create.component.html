@@ -1,1 +1,39 @@
-<p>produto-create works!</p>
+<div class="card-container"> 
+<mat-card class="fundo-personalizado">
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="produto.prodNome" name="prodNome" required>
+        </mat-form-field>
+       <mat-form-field>
+            <input matInput placeholder="Preço Custo" [(ngModel)]="produto.prodPrecoCusto" name="prodPrecoCusto" required (input)="onPrecoInput($event)">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Preço Venda" [(ngModel)]="produto.prodPrecoVenda" name="prodPrecoVenda" required (input)="onPrecoInput($event)">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estoque" [(ngModel)]="produto.prodQtdEstoque" name="prodQtdEstoque" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Categoria" [(ngModel)]="produto.prodCategoria" name="prodCategoria" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Marca" [(ngModel)]="produto.prodMarca" name="prodMarca" required>
+        </mat-form-field>
+        
+
+    </form>
+
+
+
+    <button mat-raised-button class="btn-laranja" (click)="createProduto()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+
+</mat-card>
+</div>
