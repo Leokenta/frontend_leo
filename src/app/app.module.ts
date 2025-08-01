@@ -55,6 +55,7 @@ import { ProdutoCreateComponent } from './components/produto/produto-create/prod
 import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
 import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 
 
 registerLocaleData(localePt)
@@ -88,7 +89,8 @@ registerLocaleData(localePt)
     ProdutoCreateComponent,
     ProdutoReadComponent,
     ProdutoUpdateComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    DashboardCardComponent
   ],
   imports: [
     BrowserModule,

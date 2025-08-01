@@ -1,8 +1,46 @@
 <div class="apresentacao">
-<mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title">Bem vindo ao QuacSystem!</mat-card-title>
-    <mat-card-subtitle class="subtitle">
+    <mat-card class="home mat-elevation-z3">
+      <mat-card-title class="title">Bem vindo ao QuacSystem!</mat-card-title>
+      <mat-card-subtitle class="subtitle">
         Sistema para controle administrativo de uma loja voltada à área gamer.
-    </mat-card-subtitle>
-</mat-card>
-</div>
+      </mat-card-subtitle>
+    </mat-card>
+  </div>
+  
+  <!-- Card com total de estoque -->
+  <div class="estoque-card">
+    <mat-card class="mat-elevation-z6 estoque-info">
+      <mat-card-title>📦 Produtos em Estoque</mat-card-title>
+      <mat-card-content>
+        <h2 class="estoque-numero">{{ totalProdutos }}</h2>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <!-- Card com produtos que precisam de reestoque -->
+  <div class="reestoque-card">
+    <mat-card class="mat-elevation-z6 reestoque-info">
+      <mat-card-title>⚠️ Produtos que precisam de reestoque</mat-card-title>
+      <mat-card-content>
+        <div *ngIf="produtosBaixoEstoque.length > 0; else semProdutos">
+          <div *ngFor="let produto of produtosBaixoEstoque" class="reestoque-item">
+            <div class="reestoque-info-row">
+              <span class="nome-produto">{{ produto.prodNome }}</span>
+              <span class="qtd">{{ produto.prodQtdEstoque }} un.</span>
+            </div>
+            <div class="barra-container">
+              <div 
+                class="barra" 
+                [style.width.%]="(produto.prodQtdEstoque / 5) * 100"
+                [style.background]="produto.prodQtdEstoque <= 2 ? '#ff0000' : '#ff8800'">
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #semProdutos>
+          <p style="text-align:center; color: gray;">Todos os produtos estão com estoque seguro. ✅</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

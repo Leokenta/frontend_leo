@@ -1,1 +1,50 @@
-<p>produto-delete works!</p>
+<div class="card-container"> 
+    <mat-card class="fundo-personalizado">
+      <mat-card-title>Excluir Produto</mat-card-title>
+      <form>
+        <mat-form-field>
+          <input matInput placeholder="Nome" [(ngModel)]="produto.prodNome" name="prodNome" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Preço Custo" [value]="precoCustoStr" name="prodPrecoCusto" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Preço Venda" [value]="precoVendaStr" name="prodPrecoVenda" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Estoque" [(ngModel)]="produto.prodQtdEstoque" name="prodQtdEstoque" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Categoria" [(ngModel)]="produto.prodCategoria" name="prodCategoria" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Marca" [(ngModel)]="produto.prodMarca" name="prodMarca" disabled>
+        </mat-form-field>
+  
+        <mat-form-field>
+              <input matInput placeholder="Fornecedor" [(ngModel)]="fornecedorNomeSelecionado" (input)="filtrarFornecedores()" name="fornecedor" disabled [matAutocomplete]="auto" autocomplete="off">
+          <mat-autocomplete
+            #auto="matAutocomplete" (optionSelected)="selecionarFornecedor($event.option.value)">
+            <mat-option *ngFor="let fornecedor of fornecedoresFiltrados" [value]="fornecedor.forNomeFantasia">
+              {{ fornecedor.forNomeFantasia }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+  
+  </form>
+  
+      <button mat-raised-button class="btn-laranja" (click)="deleteProduto()" color="primary">
+        Excluir
+      </button>
+      
+      <button mat-raised-button (click)="cancel()">
+        Cancelar
+      </button>
+    </mat-card>
+  </div>
+  

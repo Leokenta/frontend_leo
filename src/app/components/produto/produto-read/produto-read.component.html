@@ -26,13 +26,13 @@
     <!-- Preco Custo Column -->
     <ng-container matColumnDef="prodPrecoCusto">
       <th mat-header-cell *matHeaderCellDef>Preco Custo</th>
-      <td mat-cell *matCellDef="let row">{{row.prodPrecoCusto}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.prodPrecoCusto | currency:'BRL':'symbol':'1.2-2':'pt' }}</td>
     </ng-container>
 
     <!-- Preco Venda Column -->
     <ng-container matColumnDef="prodPrecoVenda">
       <th mat-header-cell *matHeaderCellDef>Preco Venda</th>
-      <td mat-cell *matCellDef="let row">{{row.prodPrecoVenda}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.prodPrecoVenda | currency:'BRL':'symbol':'1.2-2':'pt' }}</td>
     </ng-container>
 
     <!-- Estoque Column -->

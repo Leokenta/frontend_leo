@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produto.model';
 import { ProdutoService } from '../produto.service';
 
+
 @Component({
   selector: 'app-produto-read',
   templateUrl: './produto-read.component.html',
@@ -20,6 +21,7 @@ export class ProdutoReadComponent implements OnInit {
     this.produtoService.read().subscribe(produtos => {
       this.produtos = produtos;
       this.produtosFiltrados = produtos;
+      
     });
   }
 
