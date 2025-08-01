@@ -1,39 +1,49 @@
 <div class="card-container"> 
-<mat-card class="fundo-personalizado">
+  <mat-card class="fundo-personalizado">
     <mat-card-title>Novo Produto</mat-card-title>
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="produto.prodNome" name="prodNome" required>
-        </mat-form-field>
-       <mat-form-field>
-            <input matInput placeholder="Preço Custo" [(ngModel)]="produto.prodPrecoCusto" name="prodPrecoCusto" required (input)="onPrecoInput($event)">
-        </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Nome" [(ngModel)]="produto.prodNome" name="prodNome" required>
+      </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Preço Venda" [(ngModel)]="produto.prodPrecoVenda" name="prodPrecoVenda" required (input)="onPrecoInput($event)">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Estoque" [(ngModel)]="produto.prodQtdEstoque" name="prodQtdEstoque" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Categoria" [(ngModel)]="produto.prodCategoria" name="prodCategoria" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Marca" [(ngModel)]="produto.prodMarca" name="prodMarca" required>
-        </mat-form-field>
-        
+      <mat-form-field>
+        <input matInput placeholder="Preço Custo" [value]="precoCustoStr" name="prodPrecoCusto" required (input)="onPrecoCustoInput($event)">
+      </mat-form-field>
 
-    </form>
+      <mat-form-field>
+        <input matInput placeholder="Preço Venda" [value]="precoVendaStr" name="prodPrecoVenda" required (input)="onPrecoVendaInput($event)">
+      </mat-form-field>
 
+      <mat-form-field>
+        <input matInput placeholder="Estoque" [(ngModel)]="produto.prodQtdEstoque" name="prodQtdEstoque" required>
+      </mat-form-field>
 
+      <mat-form-field>
+        <input matInput placeholder="Categoria" [(ngModel)]="produto.prodCategoria" name="prodCategoria" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Marca" [(ngModel)]="produto.prodMarca" name="prodMarca" required>
+      </mat-form-field>
+
+      <mat-form-field>
+            <input matInput placeholder="Fornecedor" [(ngModel)]="fornecedorNomeSelecionado" (input)="filtrarFornecedores()" name="fornecedor" required [matAutocomplete]="auto" autocomplete="off">
+        <mat-autocomplete
+          #auto="matAutocomplete" (optionSelected)="selecionarFornecedor($event.option.value)">
+          <mat-option *ngFor="let fornecedor of fornecedoresFiltrados" [value]="fornecedor.forNomeFantasia">
+            {{ fornecedor.forNomeFantasia }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+</form>
 
     <button mat-raised-button class="btn-laranja" (click)="createProduto()" color="primary">
-        Salvar
+      Salvar
     </button>
     
     <button mat-raised-button (click)="cancel()">
-        Cancelar
+      Cancelar
     </button>
-
-</mat-card>
+  </mat-card>
 </div>

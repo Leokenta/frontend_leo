@@ -1,3 +1,5 @@
+import { Fornecedor } from "../fornecedor/fornecedor.model"
+
 export interface Produto{
  prodId?: number
  prodNome: string
@@ -6,4 +8,6 @@ export interface Produto{
  prodQtdEstoque: number
  prodCategoria: string
  prodMarca: string
+ fornecedorId?: number;
+ fornecedor?: Fornecedor;
 }

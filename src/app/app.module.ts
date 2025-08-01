@@ -28,6 +28,7 @@ import { HomeComponent } from './views/home/home.component';
 import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
 import { RedDirective } from './directives/red.directive';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 import localePt from '@angular/common/locales/pt';
@@ -107,7 +108,9 @@ registerLocaleData(localePt)
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatAutocompleteModule,
+    
   ],
   providers: [{
     provide: LOCALE_ID,
