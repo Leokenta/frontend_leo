@@ -1,16 +1,33 @@
-.footer{
-    /*posição fixa*/
+.footer {
     position: fixed;
-    /*coloca toolbar na parte de baixa */
     bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    color: orange;
-    background-color: #1d1d1d;
-    /*coloca no final da linha. sendo no lado direiro parte inferior*/
     justify-content: flex-end;
-}
-
-.footer > span{
-    font-size: 1.1rem;
-    font-weight: 300;
-}
+    align-items: center;
+    background-color: #545454;
+    height: 50px;
+    padding: 0 30px;
+    border-top: 1px solid #fffefe;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .footer > span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fdfdfd;
+  }
+  
+  .footer a {
+    margin-left: 15px;
+    color: #3f51b5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #1e3da8;
+    text-decoration: underline;
+  }
+  

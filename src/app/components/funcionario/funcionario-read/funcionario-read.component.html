@@ -1,61 +1,56 @@
-<!--<ul>
-    <li *ngFor="let product of products">
-        {{product.id}} => {{product.name}} => {{product.price}}
-    </li>
-</ul> -->
+<div class="search-container">
+  <div class="search-field">
+    <input matInput [(ngModel)]="filtro" (input)="aplicarFiltro()" placeholder="Digite o nome do funcionário" />
+    <button *ngIf="filtro" (click)="filtro=''; aplicarFiltro()" class="clear-button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
 
 <div class="mat-elevation-z4">
-    <table mat-table [dataSource]="funcionarios">
-      <!-- Id Column -->
-      <ng-container matColumnDef="funId">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let row">{{row.funId}}</td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="funNome">
-        <th mat-header-cell *matHeaderCellDef>Nome</th>
-        <td mat-cell *matCellDef="let row">{{row.funNome}}</td>
-      </ng-container>
-  
-      <!-- Price Column -->
-      <ng-container matColumnDef="funCPF">
-        <th mat-header-cell *matHeaderCellDef>CPF</th>
-                                            <!--UTILIZAÇÃO DE PIPES-->
-        <td mat-cell *matCellDef="let row">{{row.funCPF}}</td>
-      </ng-container>
+  <table mat-table [dataSource]="funcionariosFiltrados">
 
-      <!-- Price Column -->
-      <ng-container matColumnDef="funCargo">
-        <th mat-header-cell *matHeaderCellDef>Cargo</th>
-                                            <!--UTILIZAÇÃO DE PIPES-->
-        <td mat-cell *matCellDef="let row">{{row.funCargo}}</td>
-      </ng-container>
+    <!-- Colunas existentes -->
+    <ng-container matColumnDef="funId">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let row">{{row.funId}}</td>
+    </ng-container>
 
-      <!-- Price Column -->
-      <ng-container matColumnDef="funTelefone">
-        <th mat-header-cell *matHeaderCellDef>Telefone</th>                                            
-        <td mat-cell *matCellDef="let row">{{row.funTelefone}}</td>
-      </ng-container>
+    <ng-container matColumnDef="funNome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let row">{{row.funNome}}</td>
+    </ng-container>
 
-      <!-- Action Column -->
-      <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef>Ações</th>                     
-        <td mat-cell *matCellDef="let row">
-            <a routerLink="/funcionarios/update/{{ row.funId }}" class="edit">
-                <i class="material-icons">
-                    edit
-                </i>
-            </a>
-            <a routerLink="/funcionarios/delete/{{ row.funId }}" class="delete"> 
-                <i class="material-icons">
-                    delete
-                </i>
-            </a>
-        </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div>
+    <ng-container matColumnDef="funCPF">
+      <th mat-header-cell *matHeaderCellDef>CPF</th>
+      <td mat-cell *matCellDef="let row">{{row.funCPF}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="funCargo">
+      <th mat-header-cell *matHeaderCellDef>Cargo</th>
+      <td mat-cell *matCellDef="let row">{{row.funCargo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="funTelefone">
+      <th mat-header-cell *matHeaderCellDef>Telefone</th>
+      <td mat-cell *matCellDef="let row">{{row.funTelefone}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <a routerLink="/funcionarios/update/{{ row.funId }}" class="edit">
+          <i class="material-icons">edit</i>
+        </a>
+        <a routerLink="/funcionarios/delete/{{ row.funId }}" class="delete">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </ng-container>
+
+    <!-- Cabeçalhos e linhas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

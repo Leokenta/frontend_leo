@@ -12,7 +12,7 @@ mat-card{
 }
 
 .fundo-personalizado {
-    background-color: #ffffffcb 
+    background-color: #ffffff 
 
 }
 
@@ -27,10 +27,11 @@ button{
 }
 
 .btn-laranja {
-  background-color: orange;
+  background-color: 0 6px 16px rgba(0, 0, 0, 0.15);
   color: white; /* para garantir que o texto fique legível */
 }
 
 .btn-laranja:hover {
-  background-color: darkorange; /* opcional: cor no hover */
+  transform: translateY(-2px);
+  background-color: 0 3px 8px rgba(0, 0, 0, 0.30); /* opcional: cor no hover */
 }

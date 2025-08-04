@@ -1,63 +1,28 @@
-/*Um pseudo-elemento em CSS é como um efeito visual extra que você adiciona a um elemento sem precisar criar nada novo no HTML.
- Ele serve para criar partes invisíveis que só aparecem com o CSS, como um brilho, uma sombra ou uma faixa decorativa.
+button {
+  margin-top: 65px;
+  margin-bottom: 30px;
+  padding: 12px 32px;
+  background-color: #3f51b5; /* Azul gamer sólido */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
 
-Exemplos comuns:
-::before -> Adiciona algo antes do conteúdo.
-::after -> Adiciona algo depois do conteúdo.
-Só mexe no visual. Não altera o HTML*/
-  
-  button {
-    display: inline-block; /* Faz com que o botão seja um elemento em linha, mas com propriedades de bloco */
-    padding: 0.10rem 0.25rem; /* Espaçamento interno (topo/baixo: 0.10rem, lados: 0.25rem) */
-    border-radius: 10rem; /* Deixa as bordas extremamente arredondadas (formato de pílula) */
-    color: #fff; /* Cor do texto: branco */
-    text-transform: uppercase; /* Converte o texto para letras maiúsculas */
-    font-size: 0.85rem; /* Tamanho da fonte: 0.85 rem */
-    letter-spacing: 0.15rem; /* Espaçamento entre as letras */
-    transition: all 0.3s; /* Faz com que todas as mudanças de estilo ocorram suavemente em 0.3 segundos */
-    position: relative; /* Torna a posição do botão relativa para posicionar os pseudo elementos dentro dele */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do botão */
-    z-index: 1; /* Define o nível de empilhamento do botão (fica acima dos pseudo-elementos) */
-    margin-top: 70px;
-  }
-  
-  button::after {
-    content: ''; /* Cria um pseudo-elemento vazio (obrigatório para exibir o estilo) */
-    position: absolute; /* Posição absoluta em relação ao botão (pai com position: relative) */
-    bottom: 0; /* Alinha o fundo do pseudo-elemento com o fundo do botão */
-    left: 0; /* Alinha a lateral esquerda com a lateral do botão */
-    width: 100%; /* Faz o pseudo-elemento ocupar toda a largura do botão */
-    height: 100%; /* Faz o pseudo-elemento ocupar toda a altura do botão */
-    background-color: #383737; /* Define a cor de fundo usando a variável --color (azul claro) */
-    border-radius: 10rem; /* Borda arredondada igual ao botão */
-    z-index: -2; /* Coloca este pseudo elemento atrás de tudo (inclusive do próximo pseudo elemento) */
-  }
-  
-  button::before {
-    content: ''; /* Cria outro pseudo-elemento vazio */
-    position: absolute; /* Posição absoluta dentro do botão */
-    bottom: 0; /* Alinha na parte inferior */
-    left: 0; /* Alinha na lateral esquerda */
-    width: 0%; /* Inicialmente, a largura é zero (invisível) */
-    height: 100%; /* Altura total do botão */
-    background-color: #e08905; /* Cor de fundo mais escura (simula um efeito de escurecimento) */
-    transition: all 0.3s; /* Suaviza a expansão da largura ao passar o mouse */
-    border-radius: 10rem; /* Mantém a borda arredondada */
-    z-index: -1; /* Fica entre o fundo original e o conteúdo do botão */
-  }
-  
-  button:hover {
-    color: #fff; /* Quando o mouse passa por cima, o texto continua branco */
-  }
-  
-  button:hover::before {
-    width: 100%; /* Quando o mouse passa por cima, a largura do ::before vai de 0% para 100%, criando o efeito de transição */
-  }
-  
-  /* RESET PARA APRESENTAÇÃO (Deixa o visual mais limpo e consistente entre navegadores) */
-  * {
-    font-family: Arial, sans-serif; /* Define Arial como fonte padrão para todos os elementos */
-    text-decoration: none; /* Remove qualquer decoração de texto, como sublinhado em links */
-    font-size: 20px; /* Tamanho de fonte base para todos os elementos */
-  }
-   
+button:hover {
+  background-color: #1e3da8; /* Tom mais escuro no hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}

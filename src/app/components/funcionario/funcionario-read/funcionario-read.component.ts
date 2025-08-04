@@ -9,16 +9,24 @@ import { FuncionarioService } from '../funcionario.service';
 })
 export class FuncionarioReadComponent implements OnInit {
 
-  funcionarios!: Funcionario[]
-  displayedColumns = ['funId', 'funNome', 'funCPF', 'funCargo','funTelefone', 'action']
+  funcionarios!: Funcionario[];
+  funcionariosFiltrados!: Funcionario[];
+  filtro: string = '';
+  displayedColumns = ['funId', 'funNome', 'funCPF', 'funCargo', 'funTelefone', 'action'];
 
   constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
     this.funcionarioService.read().subscribe(funcionarios => {
-      this.funcionarios = funcionarios
-      console.log(funcionarios)  
-    })
+      this.funcionarios = funcionarios;
+      this.funcionariosFiltrados = funcionarios; // inicializa filtrados com todos
+    });
   }
 
+  aplicarFiltro(): void {
+    const filtroLower = this.filtro.toLowerCase();
+    this.funcionariosFiltrados = this.funcionarios.filter(func =>
+      func.funNome.toLowerCase().includes(filtroLower)
+    );
+  }
 }

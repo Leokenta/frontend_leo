@@ -1,71 +1,71 @@
 table{
-    background-color: #3f3b3b62;
-    width: 100%;
+  background-color: #3f3b3b62;
+  width: 100%;
 }
 
 .edit > i{
-    color: #f8dda4;
+  color: #fdd835;
 }
 
 .delete > i{
-    color: #e35e6b;
+  color: #e35e6b;
 }
 table th {
-    color: #ffffff; /*texto do titulo branco */
-  }
+  color: #ffffff; /*texto do titulo branco */
+}
 
 table td {
-    color: #fe9920; /* muda a cor para um azul, por exemplo */
-  }
+  color: #ffffff; /* muda a cor para um azul, por exemplo */
+}
 
-  .search-container {
-    display: flex; /* Organiza os itens dentro da div de forma flexível */
-    justify-content: flex-end; /* Alinha os itens para a direita */
-    margin-top: -50px; /* Empurra a barra de pesquisa 50 pixels para cima */
-    margin-bottom: 0px; /* Não deixa espaço abaixo da barra de pesquisa */
-    padding-right: 200px; /* Adiciona 20 pixels de espaço à direita da barra de pesquisa */
-  }
-  
-  .search-field {
-    position: relative; /* Isso permite posicionar elementos internos (como o ícone e o botão) em relação a essa caixa */
-    width: 180px; /* Define a largura da caixa de pesquisa como 200 pixels */
-  }
-  
-  .search-field input {
-    width: 150%; /* Faz o campo de pesquisa ocupar toda a largura da caixa (200px neste caso) */
-    padding: 8px 12px; /* Dá 8px de espaçamento em cima e embaixo e 12px nas laterais */
-    height: 32px; /* Define a altura da barra de pesquisa */
-    border: 3px solid #9e9e9e; /* Cria uma borda de 3px com uma cor cinza claro */
-    border-radius: 20px; /* Deixa as bordas da caixa arredondadas com raio de 20px */
-    font-size: 14px; /* Define o tamanho da fonte do texto dentro da barra de pesquisa */
-    transition: border-color 0.3s ease; /* Adiciona uma transição suave de 0.3 segundos na cor da borda */
-  }
-  
-  .search-field input:hover {
-    border-color: #ffa726; /* Quando o usuário passar o mouse sobre o campo de pesquisa, a cor da borda fica laranja */
-  }
-  
-  .search-field input:focus {
-    outline: none; /* Remove a borda de foco padrão (normalmente fica azul) */
-    border-color: #ffa726; /* Quando o campo de pesquisa é selecionado (clicado), a borda fica laranja */
-  }
-  
-  .clear-button {
-    position: absolute; /* Posiciona o botão de limpar de forma absoluta dentro da caixa */
-    right: 0px; /* Coloca o botão 10px afastado da borda direita da caixa */
-    left: 250px;
-    top: 50%; /* Coloca o botão no meio verticalmente da caixa de pesquisa */
-    transform: translateY(-50%); /* Ajusta o botão para ficar exatamente no meio vertical */
-    background: none; /* Remove o fundo do botão */
-    border: none; /* Remove qualquer borda do botão */
-    cursor: pointer; /* Mostra um cursor de mão quando passar o mouse sobre o botão */
-  }
-  
-  .clear-button mat-icon {
-    font-size: 18px; /* Ajusta o tamanho do ícone dentro do botão de limpar */
-    color: #aaa; /* Dá uma cor cinza claro ao ícone */
-  }
-  
-  .clear-button:hover mat-icon {
-    color: #ffa726; /* Quando passar o mouse sobre o botão de limpar, a cor do ícone fica laranja */
-  }
+.search-container {
+display: flex; /* Organiza os itens dentro da div de forma flexível */
+justify-content: flex-end; /* Alinha os itens para a direita */
+margin-top: -50px; /* Empurra a barra de pesquisa 50 pixels para cima */
+margin-bottom: 0px; /* Não deixa espaço abaixo da barra de pesquisa */
+padding-right: 120px; /* Adiciona 120 pixels de espaço à direita da barra de pesquisa */
+}
+
+.search-field {
+position: relative; /* Isso permite posicionar elementos internos (como o ícone e o botão) em relação a essa caixa */
+width: 200px; /* Define a largura da caixa de pesquisa como 200 pixels */
+}
+
+.search-field input {
+width: 100%; /* Faz o campo de pesquisa ocupar toda a largura da caixa  */
+padding: 8px 12px; /* Dá 8px de espaçamento em cima e embaixo e 12px nas laterais */
+height: 32px; /* Define a altura da barra de pesquisa */
+border: 3px solid #9e9e9e; /* Cria uma borda de 3px com uma cor cinza claro */
+border-radius: 20px; /* Deixa as bordas da caixa arredondadas com raio de 20px */
+font-size: 14px; /* Define o tamanho da fonte do texto dentro da barra de pesquisa */
+transition: border-color 0.3s ease; /* Adiciona uma transição suave de 0.3 segundos na cor da borda */
+}
+
+.search-field input:hover {
+border-color: 1e3da8; /* Quando o usuário passar o mouse sobre o campo de pesquisa, a cor da borda fica laranja */
+}
+
+.search-field input:focus {
+outline: none; /* Remove a borda de foco padrão (normalmente fica azul) */
+border-color: 1e3da8; /* Quando o campo de pesquisa é selecionado (clicado), a borda fica laranja */
+}
+
+.clear-button {
+position: absolute; /* Posiciona o botão de limpar de forma absoluta dentro da caixa */
+right: 10px;     /* Coloca o botão 10px afastado da borda direita da caixa */
+left: 180px;
+top: 50%; /* Coloca o botão no meio verticalmente da caixa de pesquisa */
+transform: translateY(-50%); /* Ajusta o botão para ficar exatamente no meio vertical */
+background: none; /* Remove o fundo do botão */
+border: none; /* Remove qualquer borda do botão */
+cursor: pointer; /* Mostra um cursor de mão quando passar o mouse sobre o botão */
+}
+
+.clear-button mat-icon {
+font-size: 18px; /* Ajusta o tamanho do ícone dentro do botão de limpar */
+color: #aaa; /* Dá uma cor cinza claro ao ícone */
+}
+
+.clear-button:hover mat-icon {
+color: #ffa726; /* Quando passar o mouse sobre o botão de limpar, a cor do ícone fica laranja */
+}

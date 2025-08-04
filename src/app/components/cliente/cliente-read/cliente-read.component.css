@@ -4,7 +4,7 @@ table{
 }
 
 .edit > i{
-    color: #f8dda4;
+    color: #fdd835;
 }
 
 .delete > i{
@@ -15,7 +15,7 @@ table th {
   }
 
 table td {
-    color: #fe9920; /* muda a cor para um azul, por exemplo */
+    color: #ffffff; /* muda a cor para um azul, por exemplo */
   }
 
 .search-container {
@@ -42,12 +42,12 @@ table td {
 }
 
 .search-field input:hover {
-  border-color: #ffa726; /* Quando o usuário passar o mouse sobre o campo de pesquisa, a cor da borda fica laranja */
+  border-color: 1e3da8; /* Quando o usuário passar o mouse sobre o campo de pesquisa, a cor da borda fica laranja */
 }
 
 .search-field input:focus {
   outline: none; /* Remove a borda de foco padrão (normalmente fica azul) */
-  border-color: #ffa726; /* Quando o campo de pesquisa é selecionado (clicado), a borda fica laranja */
+  border-color: 1e3da8; /* Quando o campo de pesquisa é selecionado (clicado), a borda fica laranja */
 }
 
 .clear-button {

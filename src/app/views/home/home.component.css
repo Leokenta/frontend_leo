@@ -1,100 +1,59 @@
-.home .title{
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.2;
-    color: white;
-}
 .home {
-    background-color: #292827;
-    margin-top: 70px;
-    box-shadow: 
-        inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-        inset 2px 2px 5px rgba(0, 0, 0, 0.4),
-        4px 0 10px rgba(0, 0, 0, 0.6);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-}
-.home .subtitle{
-    font-size: 1.1rem;
-    color: white;
-}
-.apresentacao{
-    padding-left: 35px;
-    padding-right: 35px;
-}
-
-.estoque-card {
+    background-color: #ffffff;
+    margin-top: 65px;
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .home .title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #222222;
+    margin-bottom: 10px;
+  }
+  
+  .home .subtitle {
+    font-size: 1.2rem;
+    color: #3f51b5;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  
+  .home-content {
+    font-size: 1rem;
+    color: #444444;
+    line-height: 1.6;
+  }
+  
+  .home-content p {
+    margin-bottom: 20px;
+  }
+  
+  .home-content strong {
+    color: #3f51b5;
+  }
+  
+  .home-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .home-content ul li {
+    margin-bottom: 10px;
+    padding-left: 24px;
+    position: relative;
+  }
+  
+  .home-content ul li::before {
+    content: "✔️";
     position: absolute;
-    top: 290px;
-    left: 100px;
-}
-
-.estoque-info {
-    background: linear-gradient(145deg, #1e1e1e, #292929);
-    color: #fe9920; 
-    border: 2px solid #fe9920;
-    text-align: center;
-    width: 300px;
-    padding: 50px;
-    box-shadow: 0px 0px 20px rgba(73, 73, 73, 0.993);
-    border-radius: 12px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.estoque-info:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 30px rgb(255, 136, 0);
-}
-
-.estoque-numero {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #ffffff;
-}
-
-/* ======== CARD DE REESTOQUE ======== */
-.reestoque-card {
-    position: absolute;
-    top: 290px;
-    left: 600px;
-}
-
-.reestoque-info {
-    background: linear-gradient(145deg, #1e1e1e, #292929);
-    color: #ff8800;
-    border: 2px solid #ff8800;
-    width: 350px;
-    padding: 47px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 20px rgba(73, 73, 73, 0.993);
-}
-
-.reestoque-item {
-    margin-bottom: 15px;
-}
-
-.reestoque-info-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.barra-container {
-    background: #333;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.barra {
-    height: 100%;
-    transition: width 0.5s;
-}
-
-.nome-produto {
-    font-weight: bold;
-}
-
-.qtd {
-    color: #ff7043;
-}
+    left: 0;
+    color: #3f51b5;
+  }
+  

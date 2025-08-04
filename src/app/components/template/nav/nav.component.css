@@ -1,80 +1,83 @@
-/*.sidenav{
-    background-color: #f9a03f;
-    width: 200px;
-}*/
-
-.sidenav i{
-    padding-right: 10px;
-}
-
-.content{
-    padding: 16px;
-    background-color: #1d1d1d;
-    margin-left: 20px; /* margem para o espaço ocupado pelos 20px visíveis */
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.sidebar-wrapper {
-    display: flex;
-  }
-  
-  .sidebar {
-    width: 200px;
-    height: 100vh;
-    background-color: #fe9920;
-    color: white;
-    position: fixed;
-    left: -180px; /* esconde quase tudo, mas deixa 20px visíveis */
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-  
-  .sidebar:hover {
-    left: 0; /* aparece ao passar o mouse */
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 20px;
-  }
-  
-  .sidebar ul li {
-    margin: 15px 0;
-  }
-  
-  .sidebar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
- 
-.sidenav a:hover {
-    background-color: #202020; /* Cor mais escura ao passar o mouse */
-}
-
-.sidenav a{
-    display: flex; /* Alinha horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-    gap: 8px; /* Espaço do ícone e do texto */
-    margin: 10px 0; 
-    padding: 10px; 
-    width: 90%; /* quando passa o mouse em cima, aparece uma barra mais escura */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
-    border-radius: 4px; /* arredonda os cantos */
-    transition: background-color 0.5s; /* Transição suave ao passar o mouse*/
-    font-size: 20px;
-}
-
-.sidenav{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+body {
+  background: #2d2c3e;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 .container {
-    height: 95vh;
-  }
+  height: 95vh;
+}
+
+.sidenav {
+  background: #383838;
+  height: 100vh;
+  width: 225px;
+  color: #ffffff;
+  position: fixed;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  box-shadow:
+    inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.4),
+    4px 0 10px rgba(0, 0, 0, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidenav a {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 40px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidenav a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateX(5px);
+}
+
+.sidenav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease;
+  border-radius: 40px;
+  z-index: 0;
+}
+
+.sidenav a:hover::before {
+  width: 100%;
+}
+
+.sidenav i {
+  padding-right: 10px;
+  font-size: 34px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1;
+}
+
+.sidenav a:hover i {
+  transform: scale(1.2);
+  color: #ec0471; /* Verde claro no hover */
+}
+
+.content {
+  margin-left: 225px; /* Mesma largura do sidenav */
+  padding: 20px;
+  background-color:#383838;
+  min-height: 100vh;
+  color: #ffffff;
+}
