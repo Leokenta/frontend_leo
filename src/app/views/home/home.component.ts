@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Produto } from '../../components/produto/produto.model';
 
+interface Produto {
+  prodId?: number;
+  prodNome: string;
+  prodQtdEstoque: number;
+  prodCategoria: string;
+  prodPrecoVenda: number;
+}
 
 @Component({
   selector: 'app-home',
@@ -9,33 +15,34 @@ import { Produto } from '../../components/produto/produto.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  totalProdutos: number = 0;
-  produtosBaixoEstoque: Produto[] = [];
+  totalProdutos = 0;
+  produtos: Produto[] = [];
+  produtosBaixoEstoque: (Produto & { percentualEstoque: number })[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.carregarTotalEstoque();
-    this.carregarProdutosBaixoEstoque();
+    this.carregarProdutos();
   }
 
-  carregarTotalEstoque() {
-    this.http.get<number>('http://localhost:8080/produtos/estoque/total')
-      .subscribe({
-        next: (total) => this.totalProdutos = total,
-        error: (err) => console.error('Erro ao buscar estoque total', err)
-      });
+  carregarProdutos(): void {
+    this.http.get<Produto[]>('http://localhost:8080/produtos').subscribe({
+      next: (produtos) => {
+        this.produtos = produtos;
+        this.totalProdutos = produtos.reduce((acc, p) => acc + p.prodQtdEstoque, 0);
+        this.produtosBaixoEstoque = produtos
+          .filter(p => p.prodQtdEstoque < 5)
+          .map(p => ({
+            ...p,
+            percentualEstoque: Math.min((p.prodQtdEstoque / 5) * 100, 100)
+          }));
+      },
+      error: (err) => {
+        console.error('Erro ao carregar produtos:', err);
+        this.produtos = [];
+        this.produtosBaixoEstoque = [];
+        this.totalProdutos = 0;
+      }
+    });
   }
-
-  carregarProdutosBaixoEstoque() {
-    this.http.get<Produto[]>('http://localhost:8080/produtos')
-      .subscribe({
-        next: (produtos) => {
-          this.produtosBaixoEstoque = produtos.filter(p => p.prodQtdEstoque < 5);
-        },
-        error: (err) => console.error('Erro ao buscar produtos', err)
-      });
-  }
-
 }

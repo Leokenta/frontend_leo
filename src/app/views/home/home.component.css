@@ -1,59 +1,138 @@
+
 .home {
-    background-color: #ffffff;
-    margin-top: 65px;
-    padding: 40px 60px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .home .title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #222222;
-    margin-bottom: 10px;
-  }
-  
-  .home .subtitle {
-    font-size: 1.2rem;
-    color: #3f51b5;
-    font-weight: 500;
-    margin-bottom: 30px;
-  }
-  
-  .home-content {
-    font-size: 1rem;
-    color: #444444;
-    line-height: 1.6;
-  }
-  
-  .home-content p {
-    margin-bottom: 20px;
-  }
-  
-  .home-content strong {
-    color: #3f51b5;
-  }
-  
-  .home-content ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  .home-content ul li {
-    margin-bottom: 10px;
-    padding-left: 24px;
-    position: relative;
-  }
-  
-  .home-content ul li::before {
-    content: "✔️";
-    position: absolute;
-    left: 0;
-    color: #3f51b5;
-  }
-  
+  background: rgba(255, 255, 255, 0.05);
+  padding: 85px;
+  color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction:column;
+  overflow-y: auto;      /* permite rolar o conteúdo se passar da altura */
+}
+
+.apresentacao {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.estoque-card,
+.reestoque-card,
+.tabela-produtos {
+  width: 100%;
+  margin-top: 30px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.estoque-info,
+.reestoque-info,
+.tabela-produtos mat-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.estoque-info:hover,
+.reestoque-info:hover,
+.tabela-produtos mat-card:hover {
+  transform: scale(1.02);
+}
+
+.estoque-numero {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ffb3;
+  text-align: center;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
+}
+
+.reestoque-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.reestoque-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.nome-produto {
+  font-weight: 500;
+}
+
+.qtd {
+  color: #ffd700;
+}
+
+.barra-container {
+  background: rgba(255, 255, 255, 0.1);
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  transition: width 0.8s ease-in-out, background 0.8s ease;
+  border-radius: 10px;
+}
+
+.tabela-produtos table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tabela-produtos th {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { color: #00ffb3; }
+  50% { color: #ffffff; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

@@ -1,27 +1,58 @@
-<mat-card class="home mat-elevation-z3">
-  <mat-card-title class="title">Bem-vindo ao Gamer System!</mat-card-title>
-  <mat-card-subtitle class="subtitle">
-    Sistema de gerenciamento completo para sua loja gamer
-  </mat-card-subtitle>
+<div class="container">
+  <div class="home">
+    <h1>Gerenciamento</h1>
+    <p>Tenha total controle sobre sua loja!</p>
+    <div class="apresentacao">
+    </div>
 
-  <div class="home-content">
-    <p>
-      O <strong>Gamer System</strong> é uma plataforma desenvolvida para facilitar o controle de <strong>produtos</strong>, <strong>fornecedores</strong>, <strong>clientes</strong> e <strong>funcionários</strong> da sua loja especializada no mundo gamer.
-    </p>
+    <div class="estoque-card">
+      <div class="estoque-info">
+        <h2 style="text-align: center;">Total de Produtos</h2>
+        <div class="estoque-numero">{{ totalProdutos }}</div>
+      </div>
+    </div>
 
-    <p>
-      Com um painel intuitivo e navegação rápida, você pode cadastrar, editar e acompanhar tudo em tempo real. Nosso objetivo é tornar sua gestão mais ágil, moderna e eficiente.
-    </p>
+    <div class="reestoque-card" *ngIf="produtosBaixoEstoque.length > 0">
+      <div class="reestoque-info">
+        <h2>Produtos com Baixo Estoque</h2>
+        <div *ngFor="let produto of produtosBaixoEstoque" class="reestoque-item">
+          <div class="reestoque-info-row">
+            <span class="nome-produto">{{ produto.prodNome }}</span>
+            <span class="qtd">{{ produto.prodQtdEstoque }}</span>
+          </div>
+          <div class="barra-container">
+            <div
+              class="barra"
+              [style.width.%]="produto.percentualEstoque"
+              [style.background]="produto.prodQtdEstoque <= 2 ? '#ff0000' : '#ff8800'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <ul>
-      <li>📦 <strong>Produtos:</strong> Cadastre e gerencie todo seu estoque.</li>
-      <li>🏭 <strong>Fornecedores:</strong> Mantenha sua rede de parceiros organizada.</li>
-      <li>👥 <strong>Clientes:</strong> Gerencie seu público e ofereça um atendimento de qualidade.</li>
-      <li>🧑‍💼 <strong>Funcionários:</strong> Controle sua equipe de forma prática.</li>
-    </ul>
-
-    <p>
-      🚀 <strong>Pronto para começar?</strong> Navegue pelo menu ao lado e explore cada funcionalidade!
-    </p>
+    <div class="tabela-produtos">
+      <mat-card>
+        <h2 style="margin-bottom: 15px;">Todos os Produtos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Quantidade</th>
+              <th>Categoria</th>
+              <th>Preço de Venda</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produto of produtos">
+              <td>{{ produto.prodNome }}</td>
+              <td>{{ produto.prodQtdEstoque }}</td>
+              <td>{{ produto.prodCategoria }}</td>
+              <td>R$ {{ produto.prodPrecoVenda | number: '1.2-2' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </div>
   </div>
-</mat-card>
+</div>
